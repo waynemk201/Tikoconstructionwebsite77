@@ -1,0 +1,277 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    background:#fff;
+    color:#fff;
+}
+
+.container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    transition:.35s;
+}
+
+header.scrolled{
+    background:#ffffff;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.nav-container{
+    height:90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo h2{
+    font-family:'Playfair Display',serif;
+    font-size:2rem;
+    color:#fff;
+    font-weight:800;
+    transition:.3s;
+}
+
+.logo span{
+    font-size:18px;
+    font-weight:400;
+}
+
+header.scrolled .logo h2{
+    color:#111;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:500;
+    transition:.3s;
+}
+
+header.scrolled nav ul li a{
+    color:#111;
+}
+
+nav ul li a:hover{
+    color:#c58b2a;
+}
+
+/* ===========================
+   CALL BUTTON
+=========================== */
+
+.call-btn{
+    text-decoration:none;
+    background:#6b3f11;
+    color:#fff;
+    padding:14px 28px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.call-btn:hover{
+    background:#c58b2a;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    position:relative;
+    height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.40),rgba(0,0,0,.40)),
+    url("https://i.ibb.co/20WbjNHC/f0c963f6-0a26-4e1a-91e6-979cb04e86ab.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    align-items:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.12);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:720px;
+    margin-left:8%;
+    animation:fadeUp 1s ease;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:76px;
+    line-height:1.05;
+    margin-bottom:30px;
+}
+
+.hero p{
+    font-size:22px;
+    line-height:1.7;
+    margin-bottom:40px;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:18px 35px;
+    border-radius:8px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.gold-btn{
+    background:#c58b2a;
+    color:#fff;
+}
+
+.gold-btn:hover{
+    background:#8f6118;
+}
+
+.outline-btn{
+    border:2px solid rgba(255,255,255,.8);
+    color:#fff;
+}
+
+.outline-btn:hover{
+    background:#fff;
+    color:#111;
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+    .nav-container{
+        flex-direction:column;
+        height:auto;
+        padding:20px 0;
+    }
+
+    nav ul{
+        gap:20px;
+        flex-wrap:wrap;
+        justify-content:center;
+        margin:20px 0;
+    }
+
+    .hero-content{
+        margin:0 30px;
+    }
+
+    .hero h1{
+        font-size:54px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        text-align:center;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+    .logo h2{
+        font-size:28px;
+    }
+
+}
