@@ -15,13 +15,13 @@ html{
 body{
     font-family:'Poppins',sans-serif;
     overflow-x:hidden;
-    background:#fff;
     color:#fff;
+    background:#fff;
 }
 
 .container{
     width:90%;
-    max-width:1300px;
+    max-width:1250px;
     margin:auto;
 }
 
@@ -34,13 +34,13 @@ header{
     top:0;
     left:0;
     width:100%;
-    z-index:1000;
-    transition:.35s;
+    z-index:999;
+    transition:.4s ease;
 }
 
 header.scrolled{
     background:#ffffff;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 /* ===========================
@@ -63,7 +63,7 @@ header.scrolled{
 }
 
 .logo span{
-    font-size:18px;
+    font-size:17px;
     font-weight:400;
 }
 
@@ -74,13 +74,12 @@ header.scrolled .logo h2{
 nav ul{
     list-style:none;
     display:flex;
-    align-items:center;
     gap:40px;
 }
 
 nav ul li a{
-    text-decoration:none;
     color:#fff;
+    text-decoration:none;
     font-weight:500;
     transition:.3s;
 }
@@ -98,10 +97,10 @@ nav ul li a:hover{
 =========================== */
 
 .call-btn{
-    text-decoration:none;
-    background:#6b3f11;
+    background:#5b3716;
     color:#fff;
-    padding:14px 28px;
+    text-decoration:none;
+    padding:15px 28px;
     border-radius:8px;
     display:flex;
     align-items:center;
@@ -115,15 +114,31 @@ nav ul li a:hover{
 }
 
 /* ===========================
-   HERO
+   MOBILE MENU
+=========================== */
+
+.menu-btn{
+    display:none;
+    color:#fff;
+    font-size:30px;
+    cursor:pointer;
+}
+
+header.scrolled .menu-btn{
+    color:#111;
+}
+
+/* ===========================
+   HERO SECTION
 =========================== */
 
 .hero{
     position:relative;
+    width:100%;
     height:100vh;
 
-    background:
-    linear-gradient(rgba(0,0,0,.40),rgba(0,0,0,.40)),
+    background-image:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
     url("https://i.ibb.co/20WbjNHC/f0c963f6-0a26-4e1a-91e6-979cb04e86ab.png");
 
     background-size:cover;
@@ -137,12 +152,13 @@ nav ul li a:hover{
 .overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.12);
+    background:rgba(0,0,0,.15);
 }
 
 .hero-content{
     position:relative;
     z-index:2;
+    width:90%;
     max-width:720px;
     margin-left:8%;
     animation:fadeUp 1s ease;
@@ -153,12 +169,14 @@ nav ul li a:hover{
     font-size:76px;
     line-height:1.05;
     margin-bottom:30px;
+    color:#fff;
 }
 
 .hero p{
-    font-size:22px;
-    line-height:1.7;
+    font-size:21px;
+    line-height:1.8;
     margin-bottom:40px;
+    color:#fff;
 }
 
 /* ===========================
@@ -168,14 +186,15 @@ nav ul li a:hover{
 .hero-buttons{
     display:flex;
     gap:18px;
+    flex-wrap:wrap;
 }
 
 .btn{
-    text-decoration:none;
     padding:18px 35px;
     border-radius:8px;
+    text-decoration:none;
     font-weight:600;
-    transition:.3s;
+    transition:.35s;
 }
 
 .gold-btn{
@@ -184,12 +203,13 @@ nav ul li a:hover{
 }
 
 .gold-btn:hover{
-    background:#8f6118;
+    background:#8d5f1c;
 }
 
 .outline-btn{
     border:2px solid rgba(255,255,255,.8);
     color:#fff;
+    backdrop-filter:blur(6px);
 }
 
 .outline-btn:hover{
@@ -205,7 +225,7 @@ nav ul li a:hover{
 
     from{
         opacity:0;
-        transform:translateY(40px);
+        transform:translateY(50px);
     }
 
     to{
@@ -216,30 +236,44 @@ nav ul li a:hover{
 }
 
 /* ===========================
-   RESPONSIVE
+   TABLETS
 =========================== */
 
-@media(max-width:992px){
+@media(max-width:950px){
 
-    .nav-container{
-        flex-direction:column;
-        height:auto;
-        padding:20px 0;
+    nav{
+        position:fixed;
+        top:90px;
+        left:-100%;
+        width:100%;
+        background:#fff;
+        padding:40px;
+        transition:.4s;
+    }
+
+    nav.active{
+        left:0;
     }
 
     nav ul{
-        gap:20px;
-        flex-wrap:wrap;
-        justify-content:center;
-        margin:20px 0;
+        flex-direction:column;
+        gap:25px;
     }
 
-    .hero-content{
-        margin:0 30px;
+    nav ul li a{
+        color:#111;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .call-btn{
+        display:none;
     }
 
     .hero h1{
-        font-size:54px;
+        font-size:55px;
     }
 
     .hero p{
@@ -248,7 +282,16 @@ nav ul li a:hover{
 
 }
 
-@media(max-width:768px){
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:600px){
+
+    .hero-content{
+        margin-left:25px;
+        margin-right:25px;
+    }
 
     .hero h1{
         font-size:42px;
@@ -264,10 +307,6 @@ nav ul li a:hover{
 
     .btn{
         text-align:center;
-    }
-
-    nav ul{
-        gap:15px;
     }
 
     .logo h2{
