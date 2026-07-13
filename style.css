@@ -68,7 +68,7 @@ header.scrolled{
 }
 
 .logo img{
-    height:95px;
+    height:150px;
     width:auto;
     display:block;
     transition:.3s ease;
@@ -316,7 +316,7 @@ header.scrolled .menu-btn{
     }
 
      .logo img{
-        width:150px;
+        width:40px;
         height:auto;
     }
     }
