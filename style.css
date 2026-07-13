@@ -53,24 +53,30 @@ header.scrolled{
     justify-content:space-between;
     align-items:center;
 }
+/* ===========================
+   LOGO
+=========================== */
 
-.logo h2{
-    font-family:'Playfair Display',serif;
-    font-size:2rem;
-    color:#fff;
-    font-weight:800;
-    transition:.3s;
+.logo{
+    display:flex;
+    align-items:center;
 }
 
-.logo span{
-    font-size:17px;
-    font-weight:400;
+.logo a{
+    display:flex;
+    align-items:center;
 }
 
-header.scrolled .logo h2{
-    color:#111;
+.logo img{
+    height:65px;
+    width:auto;
+    display:block;
+    transition:.3s ease;
 }
 
+.logo img:hover{
+    transform:scale(1.05);
+}
 nav ul{
     list-style:none;
     display:flex;
@@ -309,8 +315,9 @@ header.scrolled .menu-btn{
         text-align:center;
     }
 
-    .logo h2{
-        font-size:28px;
+     .logo img{
+        height:50px;
+    }
     }
 
 }
