@@ -24,7 +24,6 @@ menuBtn.addEventListener("click", function () {
 
     nav.classList.toggle("active");
 
-    // Change hamburger icon to X
     const icon = menuBtn.querySelector("i");
 
     if (nav.classList.contains("active")) {
@@ -67,7 +66,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     anchor.addEventListener("click", function (e) {
 
-        const target = document.querySelector(this.getAttribute("href"));
+        const href = this.getAttribute("href");
+
+        if (href === "#") return;
+
+        const target = document.querySelector(href);
 
         if (target) {
             e.preventDefault();
@@ -80,3 +83,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 
 });
+
+
+// ===============================
+// ABOUT SECTION SCROLL ANIMATION
+// ===============================
+
+const aboutEls = document.querySelectorAll(
+    ".about-label, .about h2, .about-subheading, .about-text"
+);
+
+const aboutObserver = new IntersectionObserver(function (entries) {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+        }
+
+    });
+
+}, {
+    threshold: 0.2
+});
+
+aboutEls.forEach(el => aboutObserver.observe(el));
