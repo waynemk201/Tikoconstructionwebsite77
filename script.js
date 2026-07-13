@@ -108,3 +108,33 @@ const aboutObserver = new IntersectionObserver(function (entries) {
 });
 
 aboutEls.forEach(el => aboutObserver.observe(el));
+// ===============================
+// PROJECTS CAROUSEL
+// ===============================
+
+const track = document.getElementById("carouselTrack");
+const prevBtn = document.getElementById("prevSlide");
+const nextBtn = document.getElementById("nextSlide");
+
+if (track && prevBtn && nextBtn) {
+
+    const slides = track.querySelectorAll(".carousel-slide");
+    let currentSlide = 0;
+
+    function goToSlide(index) {
+
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+
+        currentSlide = index;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    }
+
+    nextBtn.addEventListener("click", () => goToSlide(currentSlide + 1));
+    prevBtn.addEventListener("click", () => goToSlide(currentSlide - 1));
+
+    // Auto-slide every 4 seconds
+    setInterval(() => goToSlide(currentSlide + 1), 4000);
+
+}
