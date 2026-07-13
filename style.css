@@ -53,6 +53,7 @@ header.scrolled{
     justify-content:space-between;
     align-items:center;
 }
+
 /* ===========================
    LOGO
 =========================== */
@@ -77,6 +78,7 @@ header.scrolled{
 .logo img:hover{
     transform:scale(1.05);
 }
+
 nav ul{
     list-style:none;
     display:flex;
@@ -242,6 +244,89 @@ header.scrolled .menu-btn{
 }
 
 /* ===========================
+   ABOUT
+=========================== */
+
+.about{
+    background:#fff;
+    padding:120px 0;
+}
+
+.about-container{
+    max-width:850px;
+    text-align:center;
+}
+
+.about-label{
+    display:block;
+    color:#c58b2a;
+    font-weight:600;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.about h2{
+    font-family:'Playfair Display',serif;
+    font-size:48px;
+    color:#111;
+    margin-bottom:25px;
+    line-height:1.15;
+}
+
+.about-subheading{
+    font-weight:600;
+    font-size:20px;
+    color:#111;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.about-text{
+    font-size:16px;
+    line-height:1.9;
+    color:#555;
+}
+
+/* ===========================
+   ABOUT ANIMATION
+=========================== */
+
+.about-label,
+.about h2,
+.about-subheading,
+.about-text{
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity .8s ease, transform .8s ease;
+}
+
+.about-label.animate{
+    opacity:1;
+    transform:translateY(0);
+    transition-delay:.1s;
+}
+
+.about h2.animate{
+    opacity:1;
+    transform:translateY(0);
+    transition-delay:.25s;
+}
+
+.about-subheading.animate{
+    opacity:1;
+    transform:translateY(0);
+    transition-delay:.4s;
+}
+
+.about-text.animate{
+    opacity:1;
+    transform:translateY(0);
+    transition-delay:.55s;
+}
+
+/* ===========================
    TABLETS
 =========================== */
 
@@ -315,12 +400,27 @@ header.scrolled .menu-btn{
         text-align:center;
     }
 
-     .logo img{
+    .logo img{
         width:40px;
         height:auto;
     }
-   .mobile-call{
-    display:none;
+
+    .mobile-call{
+        display:none;
+    }
+
+    .about{
+        padding:80px 0;
+    }
+
+    .about h2{
+        font-size:34px;
+    }
+
+    .about-subheading{
+        font-size:18px;
+    }
+
 }
 
 @media (max-width:768px){
@@ -348,67 +448,6 @@ header.scrolled .menu-btn{
 
     .mobile-call-btn:hover{
         background:#5f3307;
-    }
-    }
-}
-/* ===========================
-   ABOUT
-=========================== */
-
-.about{
-    background:#fff;
-    padding:120px 0;
-}
-
-.about-container{
-    max-width:850px;
-    text-align:center;
-}
-
-.about-label{
-    display:block;
-    color:#c58b2a;
-    font-weight:600;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    font-size:14px;
-    margin-bottom:20px;
-}
-
-.about h2{
-    font-family:'Playfair Display',serif;
-    font-size:48px;
-    color:#111;
-    margin-bottom:25px;
-    line-height:1.15;
-}
-
-.about-subheading{
-    font-weight:600;
-    font-size:20px;
-    color:#111;
-    line-height:1.6;
-    margin-bottom:25px;
-}
-
-.about-text{
-    font-size:16px;
-    line-height:1.9;
-    color:#555;
-}
-
-@media(max-width:600px){
-
-    .about{
-        padding:80px 0;
-    }
-
-    .about h2{
-        font-size:34px;
-    }
-
-    .about-subheading{
-        font-size:18px;
     }
 
 }
