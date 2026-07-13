@@ -319,5 +319,35 @@ header.scrolled .menu-btn{
         width:40px;
         height:auto;
     }
+   .mobile-call{
+    display:none;
+}
+
+@media (max-width:768px){
+
+    .mobile-call{
+        display:block;
+        padding:20px;
+        margin-top:auto;
+    }
+
+    .mobile-call-btn{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:10px;
+        width:100%;
+        background:#7a4309;
+        color:#fff;
+        padding:15px;
+        border-radius:8px;
+        text-decoration:none;
+        font-weight:600;
+        font-size:18px;
+    }
+
+    .mobile-call-btn:hover{
+        background:#5f3307;
+    }
     }
 
