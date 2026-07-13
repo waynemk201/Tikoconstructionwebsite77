@@ -316,8 +316,8 @@ header.scrolled .menu-btn{
     }
 
      .logo img{
-        height:180px;
+        width:150px;
+        height:auto;
     }
     }
 
-}
