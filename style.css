@@ -366,7 +366,7 @@ header.scrolled .menu-btn{
 
 .services-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2, 1fr);
     gap:40px;
 }
 
@@ -458,12 +458,11 @@ header.scrolled .menu-btn{
     }
 
     .services-grid{
-        grid-template-columns:1fr;
-        gap:30px;
+        gap:25px;
     }
 
     .service-img{
-        height:240px;
+        height:230px;
     }
 
     .services-head h2{
@@ -529,6 +528,7 @@ header.scrolled .menu-btn{
     }
 
     .services-grid{
+        grid-template-columns:1fr;
         gap:22px;
     }
 
