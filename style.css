@@ -413,6 +413,98 @@ header.scrolled .menu-btn{
 }
 
 /* ===========================
+   PROJECTS
+=========================== */
+
+.projects{
+    position:relative;
+    background-image:
+        linear-gradient(rgba(20,13,7,.75), rgba(20,13,7,.75)),
+        url('https://i.ibb.co/gM9V4D8L/1000-F-143621122-2-Ytgdzvf-SRBt-Mr-Bv2o-GY2k-Jgco-WD2a-Gv.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    padding:100px 0;
+}
+
+.projects-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.projects-head{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.projects-head h1{
+    font-family:'Playfair Display',serif;
+    font-size:46px;
+    color:#fff;
+    letter-spacing:2px;
+    margin-bottom:14px;
+}
+
+.projects-head p{
+    color:#e8c78a;
+    font-weight:500;
+    font-size:15px;
+    letter-spacing:.5px;
+}
+
+.carousel{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.carousel-track-wrap{
+    flex:1;
+    overflow:hidden;
+    border-radius:14px;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+.carousel-track{
+    display:flex;
+    transition:transform .6s ease;
+}
+
+.carousel-slide{
+    min-width:100%;
+}
+
+.carousel-slide img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    display:block;
+}
+
+.carousel-arrow{
+    flex-shrink:0;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:none;
+    background:#5b3716;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+}
+
+.carousel-arrow:hover{
+    background:#c58b2a;
+}
+
+/* ===========================
    TABLETS
 =========================== */
 
@@ -467,6 +559,25 @@ header.scrolled .menu-btn{
 
     .services-head h2{
         font-size:36px;
+    }
+
+    .projects{
+        padding:70px 0;
+        background-attachment:scroll;
+    }
+
+    .projects-head h1{
+        font-size:32px;
+    }
+
+    .carousel-slide img{
+        height:320px;
+    }
+
+    .carousel-arrow{
+        width:42px;
+        height:42px;
+        font-size:15px;
     }
 
 }
@@ -538,6 +649,32 @@ header.scrolled .menu-btn{
 
     .service-img{
         height:200px;
+    }
+
+    .projects{
+        padding:50px 0;
+    }
+
+    .projects-head h1{
+        font-size:26px;
+    }
+
+    .projects-head{
+        margin-bottom:30px;
+    }
+
+    .carousel{
+        gap:12px;
+    }
+
+    .carousel-slide img{
+        height:220px;
+    }
+
+    .carousel-arrow{
+        width:36px;
+        height:36px;
+        font-size:13px;
     }
 
 }
