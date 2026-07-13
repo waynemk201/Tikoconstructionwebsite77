@@ -327,6 +327,92 @@ header.scrolled .menu-btn{
 }
 
 /* ===========================
+   SERVICES
+=========================== */
+
+.services{
+    background:#faf7f2;
+    padding:120px 0;
+}
+
+.services-head{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 80px;
+}
+
+.services-label{
+    display:block;
+    color:#c58b2a;
+    font-weight:600;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.services-head h2{
+    font-family:'Playfair Display',serif;
+    font-size:46px;
+    color:#111;
+    margin-bottom:20px;
+}
+
+.services-head p{
+    font-size:17px;
+    line-height:1.8;
+    color:#555;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.service-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.3s ease;
+}
+
+.service-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+}
+
+.service-title{
+    padding:30px 30px 20px;
+    text-align:center;
+}
+
+.service-title h3{
+    font-family:'Playfair Display',serif;
+    font-size:26px;
+    color:#111;
+}
+
+.service-img{
+    width:100%;
+    height:280px;
+    overflow:hidden;
+}
+
+.service-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.4s ease;
+}
+
+.service-img:hover img{
+    transform:scale(1.05);
+}
+
+/* ===========================
    TABLETS
 =========================== */
 
@@ -369,6 +455,19 @@ header.scrolled .menu-btn{
 
     .hero p{
         font-size:18px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .service-img{
+        height:240px;
+    }
+
+    .services-head h2{
+        font-size:36px;
     }
 
 }
@@ -419,6 +518,26 @@ header.scrolled .menu-btn{
 
     .about-subheading{
         font-size:18px;
+    }
+
+    .services{
+        padding:80px 0;
+    }
+
+    .services-head{
+        margin-bottom:50px;
+    }
+
+    .services-grid{
+        gap:22px;
+    }
+
+    .service-title h3{
+        font-size:22px;
+    }
+
+    .service-img{
+        height:200px;
     }
 
 }
