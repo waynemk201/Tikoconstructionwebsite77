@@ -108,6 +108,8 @@ const aboutObserver = new IntersectionObserver(function (entries) {
 });
 
 aboutEls.forEach(el => aboutObserver.observe(el));
+
+
 // ===============================
 // PROJECTS CAROUSEL
 // ===============================
