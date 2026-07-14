@@ -144,23 +144,25 @@ header.scrolled .menu-btn{
     position:relative;
     width:100%;
     height:100vh;
+    overflow:hidden;
+}
 
-    background-image:
-    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-    url("https://i.ibb.co/20WbjNHC/f0c963f6-0a26-4e1a-91e6-979cb04e86ab.png");
-
+.hero-slide{
+    position:absolute;
+    inset:0;
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
-
     display:flex;
     align-items:center;
+    opacity:0;
+    z-index:1;
+    transition:opacity 1.6s cubic-bezier(0.45, 0, 0.25, 1);
 }
 
-.overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.15);
+.hero-slide.active{
+    opacity:1;
+    z-index:2;
 }
 
 .hero-content{
@@ -169,7 +171,46 @@ header.scrolled .menu-btn{
     width:90%;
     max-width:720px;
     margin-left:8%;
-    animation:fadeUp 1s ease;
+}
+
+.hero-content h1,
+.hero-content p,
+.hero-content .hero-buttons{
+    opacity:0;
+    transform:translateY(30px) scale(.95);
+}
+
+.hero-slide.active .hero-content h1,
+.hero-slide.active .hero-content p,
+.hero-slide.active .hero-content .hero-buttons{
+    animation:popUp 1s cubic-bezier(0.25, 0.8, 0.35, 1) forwards;
+}
+
+.hero-slide.active .hero-content p{
+    animation-delay:.2s;
+}
+
+.hero-slide.active .hero-content .hero-buttons{
+    animation-delay:.4s;
+}
+
+@keyframes popUp{
+
+    0%{
+        opacity:0;
+        transform:translateY(30px) scale(.95);
+    }
+
+    60%{
+        opacity:1;
+        transform:translateY(-4px) scale(1.02);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
 }
 
 .hero h1{
@@ -859,6 +900,45 @@ header.scrolled .menu-btn{
 
     .mobile-call-btn:hover{
         background:#5f3307;
+    }
+
+}
+
+/* ===========================
+   WHATSAPP FLOAT BUTTON
+=========================== */
+
+.whatsapp-float{
+    position:fixed;
+    bottom:28px;
+    right:28px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+    z-index:1000;
+    transition:.3s ease;
+}
+
+.whatsapp-float:hover{
+    background:#1ebe5b;
+    transform:scale(1.08);
+}
+
+@media(max-width:600px){
+
+    .whatsapp-float{
+        width:52px;
+        height:52px;
+        font-size:28px;
+        bottom:20px;
+        right:20px;
     }
 
 }
